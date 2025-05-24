@@ -1,1 +1,22 @@
 /* You can add global styles to this file, and also import other style files */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+.invalidField {
+    color: rgb(232, 95, 95);
+    margin-top: 12px;
+    font-family: Mansfield;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+
+    p {
+        margin: 0;
+    }
+}

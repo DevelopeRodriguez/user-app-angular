@@ -1,0 +1,25 @@
+<div class="container">
+    <mat-card *ngIf="!charging">
+        <mat-card-title>Usuarios</mat-card-title>
+        <div class="mat-elevation-z8">
+            
+            <!-- COMPONENTE REUTILIZABLE DE TABLA DINAMICA -->
+            <app-custom-table
+                [displayedColumns]="displayedColumns"
+                [dataSource]="dataSource"
+                (viewDetails)="viewUserDetails($event)"
+            ></app-custom-table>
+
+            <!-- PAGINADOR DE LA TABLA DE USUARIOS -->
+            <mat-paginator 
+                hidePageSize
+                showFirstLastButtons
+                [pageIndex]="page - 1"
+                [length]="totalData"
+                [pageSize]="elementLimit"
+                (page)="onPageChange($event)"
+            >
+            </mat-paginator>
+        </div>
+    </mat-card>
+</div>

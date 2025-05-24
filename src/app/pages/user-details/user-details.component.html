@@ -1,0 +1,31 @@
+<div class="userDetailsContainer">
+
+    <!-- Sino existe el usuario por cualquier tipo de error mostramos el siguiente contenido para que se pueda devolver -->
+    <mat-card *ngIf="!user && !charging" class="userDetailsCard">
+        <mat-card-title class="userDetailsTitle">Detalles del Usuario</mat-card-title>
+
+        <mat-card-content>
+            <h4>Usuario no encontrado</h4>
+            <button mat-button color="primary" class="backButton" (click)="onBack()">Volver</button>
+        </mat-card-content>
+    </mat-card>
+
+    <mat-card *ngIf="user" class="userDetailsCard">
+        <mat-card-title class="userDetailsTitle">Detalles del Usuario</mat-card-title>
+        <mat-card-header>
+            <div mat-card-avatar class="userAvatar">
+                <img [src]="user.avatar" alt="User Image">
+            </div>
+            <mat-card-title>{{ user.first_name }} {{ user.last_name }}</mat-card-title>
+            <mat-card-subtitle>{{ user.email }}</mat-card-subtitle>
+        </mat-card-header>
+
+        <mat-card-content>
+            <p><strong>ID:</strong> {{ user.id }}</p>
+            <p><strong>Nombre:</strong> {{ user.first_name }}</p>
+            <p><strong>Apellido:</strong> {{ user.last_name }}</p>
+            <p><strong>Email:</strong> {{ user.email }}</p>
+            <button mat-button color="primary" class="backButton" (click)="onBack()">Volver</button>
+        </mat-card-content>
+    </mat-card>
+</div>
